@@ -1,54 +1,87 @@
 
 #include "libft.h"
 
-char	**ft_split(char	const *s, char c)
+void	ft_free(char **str, int n)
 {
-	char	**sp;
-	int	*count;
-	int	words;
-	int	chars;
-	int	i;
-	int	j;
+	while (n--)
+	{
+		free(str[n]);
+	}
+	free(str);
+}
 
-	chars = 0;
-	words = 0;
+int	ft_count(char *s, char c)
+{
+	int	i;
+	int	words;
+
 	i = 0;
-	j = 0;
+	words = 0;
 	while (s[i])
 	{
-		if(s[i] != c)
-		{
-			chars++;
-		}else
-		{
-			count[words] = chars;
+		while (s[i] == c)
+			i++;
+		if (s[i] != c)
 			words++;
-			chars = 0;
-		}
+		while (s[i] != c && s[i])
+			i++;
+	}
+	return (words);
+}
+
+void	ft_fill(char *sp, const char *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != c && s[i])
+	{
+		sp[i] = s[i];
 		i++;
 	}
-	sp = (char *)malloc(words*sizeof(char*));
-	if (!sp)
-		return (NULL);
+	sp[i] = '\0';
+}
+
+int	ft_writ(char **sp, char *s, char c)
+{
+	int	i;
+	int	j;
+	int	word;
+
 	i = 0;
-	while (i <= words)
+	word = 0;
+	while (s[i] != '\0')
 	{
-		sp[i] = (char)malloc(count[words] + 1);
-		if (!sp[i])
+		if (s[i] == c || s[i] == '\0')
+			i++;
+		else
 		{
-			while	(j < i)
-			{
-				free(sp[j]);
+			j = 0;
+			while (s[i + j] != c && s[i + j] != '\0')
 				j++;
-			}
-			free (sp);
-			return (NULL);
+			sp[word] = (char *)malloc(sizeof(char) * j + 1);
+			if (sp == NULL)
+				ft_free(sp, word);
+			ft_fill(sp[word], s + i, c);
+			word++;
+			i += j;
 		}
 	}
-	i = 0;
-	while (i <= words)
-	{
+	return (0);
+}
 
-	}
+char	**ft_split(const char *s, char c)
+{
+	char	**sp;
+	int		words;
 
+	if (s == NULL)
+		return (0);
+	words = ft_count((char *)s, c);
+	sp = (char **)malloc(sizeof(char *) * (words + 1));
+	if (sp == NULL)
+		return (NULL);
+	sp[words] = 0;
+	ft_writ(sp, (char *)s, c);
+	return (sp);
 }

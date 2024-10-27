@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:45:58 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/24 20:35:59 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/10/26 20:02:49 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stddef.h>
 
-int ft_toupper(int c);
+int	ft_toupper(int c);
 int	ft_tolower(int c);
 int	ft_isalpha(char c);
 int	ft_isdigit(char c);
@@ -30,6 +31,7 @@ int	ft_strncmp(char *s, char *p, size_t n);
 char	*ft_strdup(char *s);
 char	*ft_strchr(char *str, int c);
 char	*ft_strrchr(char *str, int c);
+char	**ft_split(char const *s, char c);
 char	*ft_strnstr(char *str, char *to_find, size_t len);
 size_t	ft_strlcpy(char *dest, char *src, size_t l);
 size_t	ft_strlcat(char *dest, char *src, size_t l);

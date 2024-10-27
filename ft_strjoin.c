@@ -6,13 +6,13 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:31:02 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/24 21:58:43 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/10/26 20:05:31 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s;
 
