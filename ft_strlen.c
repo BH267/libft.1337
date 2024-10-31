@@ -6,15 +6,15 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:59:44 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/23 09:58:34 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/10/31 09:36:43 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])

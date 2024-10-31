@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:18:48 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/27 21:39:09 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:49:29 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_lenum(int n, int nega)
 	l = 1;
 	if (nega)
 		n *= -1;
-	while	(n >= 10)
+	while (n >= 10)
 	{
 		n /= 10;
 		l++;
@@ -28,32 +28,43 @@ int	ft_lenum(int n, int nega)
 		return (l + 1);
 	return (l);
 }
+
+int	ft_nega(int n, char *num)
+{
+	*num = '-';
+	n *= -1;
+	return (n);
+}
+
+char	*ft_minhandl(int n, char *num)
+{
+		num = malloc(12);
+		if (!num)
+			return (NULL);
+		num = "-2147483648\0";
+	return (num);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*num;
-	int	lenum;
-	int	nega;
+	int		nega;
+	int		lenum;
 
 	if (n == -2147483648)
-	{
-		num = "-2147483648\0";
-		return (num);
-	}
+		return (ft_minhandl(n, num));
 	nega = (n < 0);
-	lenum = ft_lenum(n, nega);
-	num = (char*)malloc(lenum + 1);
-	if(!num)
+	lenum = ft_lenum (n, nega);
+	num = malloc(lenum + 1);
+	if (!num)
 		return (NULL);
 	if (nega)
-	{
-		num[0] = '-';
-		n *= -1;
-	}
+		n = ft_nega(n, num);
 	num[lenum--] = '\0';
-	while (0 >= lenum)
+	while (0 <= lenum)
 	{
 		if (nega && !lenum)
-			break;
+			break ;
 		num[lenum--] = (n % 10) + '0';
 		n /= 10;
 	}

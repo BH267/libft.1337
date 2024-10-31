@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:16:16 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/23 09:57:39 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/10/30 09:41:11 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	ft_bzero(void *ptr, int len)
 {
-	/*while (len)
-	{
-		ptr[len] = 0;
-		len--;
-	}*/
-	return (ft_memset(ptr, 0, len));
+	ft_memset(ptr, 0, len);
+	return (ptr);
 }
