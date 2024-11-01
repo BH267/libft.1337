@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:17:19 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/31 10:06:45 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/01 11:49:52 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,35 @@
 size_t	ft_trimlen(char *s, char const *set)
 {
 	char	*end;
+	char	*ptr;
 
-	end = s + ft_strlen(s) - 1;
-	l = 0;
-	while (*s == *set )
-		s++;
-	while (*end == *set)
-		end--;
+	ptr = (char *)set;
+	end = s + ft_strlen(s) - 1 - ft_strlen(ptr);
+	while (ft_strncmp(s, ptr, ft_strlen(ptr)) == 0)
+		s += ft_strlen(ptr);
+	while (ft_strncmp(end, ptr, ft_strlen(ptr) == 0))
+		end -= ft_strlen(ptr);
 	*(end + 1) = '\0';
 	return (ft_strlen(s));
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
+	char	*ptr;
 	char	*s;
-	size_t	triml;
+	size_t	trml;
 	size_t	i;
 
-	s = (char *)s1;
-	triml = ft_trimlen(s, set);
-	str = malloc(triml + 1);
-	if (!str)
-		return (NULL);
+	ptr = (char *)s1;
+	s = ft_strdup(ptr);
+	trml = ft_trimlen(s, set);
+	ptr = malloc(trml + 1);
+	if(!ptr)
+		return(NULL);
 	i = -1;
-	while (++i < triml)
-		str[i] = s[i];
-	str[i] = '\0';
-	return (str);
+	while(++i < trml)
+		ptr[i] = s[i];
+	ptr[i] = '\0';
+	return (ptr);
+
 }
