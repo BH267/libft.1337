@@ -6,13 +6,13 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:18:48 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:29 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 17:30:15 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lenum(int n, int nega)
+static int	ft_lenum(int n, int nega)
 {
 	int	l;
 
@@ -29,19 +29,19 @@ int	ft_lenum(int n, int nega)
 	return (l);
 }
 
-int	ft_nega(int n, char *num)
+static int	ft_nega(int n, char *num)
 {
 	*num = '-';
 	n *= -1;
 	return (n);
 }
 
-char	*ft_minhandl(int n, char *num)
+static char	*ft_minhandl(char *num)
 {
-		num = malloc(12);
-		if (!num)
-			return (NULL);
-		num = "-2147483648\0";
+	num = malloc(12);
+	if (!num)
+		return (NULL);
+	num = "-2147483648\0";
 	return (num);
 }
 
@@ -51,8 +51,9 @@ char	*ft_itoa(int n)
 	int		nega;
 	int		lenum;
 
+	num = NULL;
 	if (n == -2147483648)
-		return (ft_minhandl(n, num));
+		return (ft_minhandl(num));
 	nega = (n < 0);
 	lenum = ft_lenum (n, nega);
 	num = malloc(lenum + 1);

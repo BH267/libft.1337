@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:25:12 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/03 09:51:41 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 15:59:58 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!new)
-		return;
+		return ;
 	new->next = *(lst);
 	*lst = new;
 }

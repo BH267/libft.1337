@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 17:01:33 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/02 17:31:58 by habenydi         ###   ########.fr       */
+/*   Created: 2024/11/03 16:07:55 by habenydi          #+#    #+#             */
+/*   Updated: 2024/11/03 16:11:25 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
+	if (!lst)
+		return (0);
 	i = 0;
-	whlie(lst->next)
+	while (lst)
 	{
-		lst = lst->next;
 		i++;
+		lst = lst->next;
 	}
 	return (i);
 }

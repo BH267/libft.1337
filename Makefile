@@ -29,7 +29,7 @@ bonus: $(NAME) $(OBJB)
 	@$(AR) $(NAME) $(OBJB)
 
 %.o : %.c
-	@$(CC) $(CFLAGS) -o $^ -c $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
 	@$(RM) $(OBJ) $(OBJB)

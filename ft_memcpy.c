@@ -6,20 +6,20 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 14:22:29 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/24 14:22:43 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 16:21:37 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memcpy(char *src, char *dest, size_t len)
+void	*ft_memcpy(char *src, char *dest, size_t len)
 {
-    size_t  i;
+	size_t	i;
 
-    i = 0;
-    while (i < len)
-    {
-        *(dest + i) = *(src + i);
-    }
-    return (dest);
+	i = 0;
+	while (i < len)
+	{
+		*(dest + i) = *(src + i);
+	}
+	return (dest);
 }

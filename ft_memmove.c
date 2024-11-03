@@ -6,17 +6,17 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 14:52:10 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/24 14:52:17 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 16:19:46 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(char *src, char *dest, size_t len)
+void	*ft_memmove(char *src, char *dest, size_t len)
 {
-    char    *beff;
+	char	*beff;
 
-    ft_memcpy(src, beff, len);
-    ft_memcpy(beff, dest, len);
-    return (dest);
+	ft_memcpy(src, beff, len);
+	ft_memcpy(beff, dest, len);
+	return (dest);
 }

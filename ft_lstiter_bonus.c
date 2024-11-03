@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 10:29:45 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/03 10:40:36 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 16:02:09 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst)
-		return;
+		return ;
 	while (*lst)
 	{
 		f(lst->content);

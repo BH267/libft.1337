@@ -6,13 +6,13 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:17:19 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/01 11:49:52 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 17:04:59 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_trimlen(char *s, char const *set)
+static size_t	ft_trimlen(char *s, char const *set)
 {
 	char	*end;
 	char	*ptr;
@@ -38,12 +38,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s = ft_strdup(ptr);
 	trml = ft_trimlen(s, set);
 	ptr = malloc(trml + 1);
-	if(!ptr)
-		return(NULL);
+	if (!ptr)
+		return (NULL);
 	i = -1;
-	while(++i < trml)
+	while (++i < trml)
 		ptr[i] = s[i];
 	ptr[i] = '\0';
 	return (ptr);
-
 }

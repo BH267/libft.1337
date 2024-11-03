@@ -1,16 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/03 17:23:55 by habenydi          #+#    #+#             */
+/*   Updated: 2024/11/03 17:25:05 by habenydi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free(char **str, int n)
+static void	ft_free(char **str, int n)
 {
 	while (n--)
-	{
 		free(str[n]);
-	}
 	free(str);
 }
 
-int	ft_count(char *s, char c)
+static int	ft_count(char *s, char c)
 {
 	int	i;
 	int	words;
@@ -29,7 +38,7 @@ int	ft_count(char *s, char c)
 	return (words);
 }
 
-void	ft_fill(char *sp, const char *s, char c)
+static void	ft_fill(char *sp, const char *s, char c)
 {
 	int	i;
 
@@ -42,7 +51,7 @@ void	ft_fill(char *sp, const char *s, char c)
 	sp[i] = '\0';
 }
 
-int	ft_writ(char **sp, char *s, char c)
+static int	ft_writ(char **sp, char *s, char c)
 {
 	int	i;
 	int	j;

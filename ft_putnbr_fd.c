@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:36:25 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/24 19:58:15 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 17:21:44 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ void	ft_putnbr_fd(int n, int fd)
 		sign = -1;
 	}
 	if (n < 10)
-	{
 		ft_putchar_fd('0' + n, fd);
-	}else
+	else
 	{
 		ft_putnbr_fd(n / 10, fd);
 		ft_putnbr_fd(n % 10, fd);

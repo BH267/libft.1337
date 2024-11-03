@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 19:55:57 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/02 10:21:54 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 16:02:49 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	n->content = content;
 	n->next = NULL;
-	return	(n);
+	return (n);
 }
