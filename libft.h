@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:45:58 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:45:16 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/02 10:23:58 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stddef.h>
+
+typedef struct	s_list
+{
+	void		*content;
+	struct s_list	*next;
+}			t_list;
 
 int		ft_toupper(int c);
 int		ft_tolower(int c);
