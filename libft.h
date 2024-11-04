@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:45:58 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/04 10:05:58 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:42:06 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ typedef struct s_list
 
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		ft_isalpha(char c);
-int		ft_isdigit(char c);
-int		ft_isalnum(char c);
-int		ft_isascii(char c);
-int		ft_isprint(char c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 int		ft_atoi(char *nbr);
 int		ft_lstsize(t_list *lst);
 int		ft_strncmp(char *s, char *p, size_t n);

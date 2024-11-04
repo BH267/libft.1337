@@ -6,13 +6,13 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:22:05 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/04 09:44:58 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:40:03 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
 	return (0 <= c && c <= 127);
 }

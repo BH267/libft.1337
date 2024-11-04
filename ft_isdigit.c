@@ -6,13 +6,13 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:04:01 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/23 10:00:34 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:39:18 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char n)
+int	ft_isdigit(int n)
 {
 	return ('0' <= n && n <= '9');
 }
