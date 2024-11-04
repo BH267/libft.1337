@@ -6,13 +6,13 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 20:10:28 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/24 10:58:12 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:07:00 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, size_t l)
+size_t	ft_strlcat(char *dest, const char *src, size_t l)
 {
 	size_t	slen;
 	size_t	dlen;

@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 18:50:37 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/30 16:31:20 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 09:48:15 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subs;
-	int		i;
+	size_t	i;
 
 	subs = malloc(len + 1);
 	if (!subs)

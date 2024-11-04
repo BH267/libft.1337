@@ -6,9 +6,11 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:32:19 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/03 11:48:26 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:39:17 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

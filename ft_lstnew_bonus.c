@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 19:55:57 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/03 16:02:49 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:40:09 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	n;
+	t_list	*n;
 
 	n = malloc(sizeof(t_list));
 	if (!n)

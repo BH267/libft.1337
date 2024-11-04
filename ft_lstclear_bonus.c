@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 18:18:06 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/03 16:01:30 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:27:12 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	l_list	*n;
+	t_list	*n;
 
 	if (!lst)
 		return ;
-	while (**lst)
+	while ((*lst) != NULL)
 	{
 		n = (*lst)->next;
 		ft_lstdelone(*lst, del);
