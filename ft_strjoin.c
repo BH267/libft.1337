@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:31:02 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/04 09:54:15 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:43:53 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,27 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s;
+	size_t	i;
+	size_t	j;
 
 	if (!s1 || !s2)
 		return (NULL);
 	s = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!s)
 		return (NULL);
-	ft_strlcpy(s, s1, ft_strlen(s1));
-	ft_strlcat(s, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
+	i = 0;
+	while (s1[i])
+	{
+		s[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[i])
+	{
+		s[i] = s2[j];
+		i++;
+		j++;
+	}
+	s[i] = '\0';
 	return (s);
 }

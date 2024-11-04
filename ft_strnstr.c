@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:09:41 by habenydi          #+#    #+#             */
-/*   Updated: 2024/10/24 10:59:32 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:14:12 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (*to_find)
+	if (!to_find)
 		return (str);
 	i = 0;
 	while (str[i])
