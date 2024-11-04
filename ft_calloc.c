@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:08:55 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/01 15:37:03 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 20:56:53 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ void	*ft_calloc(size_t len, size_t b)
 	p = malloc(len * b);
 	if (!p)
 		return (NULL);
-	reutrn (ft_bzero(p, len * b));
+	ft_bzero(p, len * b);
+	return (p);
 }

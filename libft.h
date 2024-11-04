@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:45:58 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/03 17:39:41 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/03 21:37:45 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_putendl(char *s, int fd);
 void	*ft_calloc(size_t len, size_t b);
 void	*ft_memset(void *arr, int c, size_t l);
 void	*ft_memchr(void *str, int c, size_t n);
-void	*ft_memcpy(char *src, char *dest, size_t len);
-void	*ft_memmove(char *src, char *dest, size_t len);
+void	*ft_memcpy(void *dest,const void *src, size_t len);
+void	*ft_memmove(void *dest,const void *src, size_t len);
 
 #endif
