@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:31:02 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/04 15:43:53 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/05 12:18:03 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	j = 0;
-	while (s2[i])
+	while (s2[j])
 	{
 		s[i] = s2[j];
 		i++;

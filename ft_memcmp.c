@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 21:09:41 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/05 19:02:52 by habenydi         ###   ########.fr       */
+/*   Created: 2024/11/05 17:07:29 by habenydi          #+#    #+#             */
+/*   Updated: 2024/11/05 17:36:28 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	size_t	j;
+	unsigned char	*p;
+	unsigned char	*q;
 
-	if (!*to_find)
-		return (str);
-	if (len > ft_strlen(to_find))
-		len = ft_strlen(to_find);
-	i = 0;
-	while (str[i])
+	p = (unsigned char *)s1;
+	q = (unsigned char *)s2;
+	while (n)
 	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			if (j == len - 1)
-				return (str + i);
-			j++;
-		}
-		i++;
+		if (*p != *q)
+			return (*p - *q);
+		p++;
+		q++;
+		n--;
 	}
-	return (NULL);
+	return (0);
 }
