@@ -6,94 +6,89 @@
 /*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 17:23:55 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/06 11:38:47 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/06 22:55:20 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free(char **str, int n)
-{
-	while (n--)
-		free(str[n]);
-	free(str);
-}
-
-static int	ft_count(char *s, char c)
+static int	ft_count_word(const char *s, char c)
 {
 	int	i;
-	int	words;
+	int	count;
 
 	i = 0;
-	words = 0;
+	count = 0;
 	while (s[i])
 	{
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
-		if (s[i] != c)
-			words++;
-		while (s[i] != c && s[i])
-			i++;
-	}
-	return (words);
-}
-
-static void	ft_fill(char *sp, const char *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != c && s[i])
-	{
-		sp[i] = s[i];
-		i++;
-	}
-	sp[i] = '\0';
-}
-
-static int	ft_writ(char **sp, char *s, char c)
-{
-	int	i;
-	int	j;
-	int	word;
-
-	i = 0;
-	word = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c || s[i] == '\0')
-			i++;
-		else
+		if (s[i])
 		{
-			j = 0;
-			while (s[i + j] != c && s[i + j] != '\0')
-				j++;
-			sp[word] = (char *)malloc(sizeof(char) * j + 1);
-			if (sp == NULL)
-				return (ft_free(sp, word), 0);
-			ft_fill(sp[word], s + i, c);
-			word++;
-			i += j;
+			count++;
+			while (s[i] != c && s[i])
+				i++;
 		}
 	}
+	return (count);
+}
+
+static int	ft_free(char **s, size_t i)
+{
+	size_t	index;
+
+	index = 0;
+	while (index < i - 1)
+	{
+		free(s[index]);
+		index++;
+	}
+	free(s);
 	return (0);
 }
 
-char	**ft_split(const char *s, char c)
+static int	ft_write(char **s, const char *d, char c)
 {
-	char	**sp;
-	int		words;
+	size_t	wcont;
+	size_t	start;
+	size_t	index;
 
-	if (s == NULL)
-		return (NULL);
-	words = ft_count((char *)s, c);
-	sp = (char **)malloc(sizeof(char *) * (words + 1));
-	if (sp == NULL)
-		return (NULL);
-	sp[words] = NULL;
-	ft_writ(sp, (char *)s, c);
-	return (sp);
+	wcont = 0;
+	start = 0;
+	index = 0;
+	while (d[wcont])
+	{
+		while (d[wcont] == c)
+			wcont++;
+		if (!d[wcont])
+			break ;
+		start = wcont;
+		while (d[wcont] && d[wcont] != c)
+			wcont++;
+		s[index] = ft_substr(d, start, wcont - start);
+		if (!s[index++])
+			return (ft_free(s, index));
+	}
+	s[index] = NULL;
+	return (1);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	int		count;
+	char	**arr;
+
+	if (!s)
+		return (NULL);
+	count = ft_count_word(s, c);
+	arr = (char **)malloc((count + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	if (ft_write(arr, s, c) == 0)
+		return (NULL);
+	return (arr);
+}
+
 /*#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
