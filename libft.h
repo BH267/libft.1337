@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:45:58 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/05 17:45:17 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/06 18:00:55 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		ft_strncmp(char *s, char *p, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_itoa(int n);
 char	*ft_strdup(const char *s);
-char	*ft_strchr(char *str, int c);
+char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);

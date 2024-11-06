@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 17:06:05 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/02 17:30:56 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:42:05 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (lst);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);

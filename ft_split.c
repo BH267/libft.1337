@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 17:23:55 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/03 17:25:05 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:38:47 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	ft_writ(char **sp, char *s, char c)
 				j++;
 			sp[word] = (char *)malloc(sizeof(char) * j + 1);
 			if (sp == NULL)
-				ft_free(sp, word);
+				return (ft_free(sp, word), 0);
 			ft_fill(sp[word], s + i, c);
 			word++;
 			i += j;
@@ -85,12 +85,34 @@ char	**ft_split(const char *s, char c)
 	int		words;
 
 	if (s == NULL)
-		return (0);
+		return (NULL);
 	words = ft_count((char *)s, c);
 	sp = (char **)malloc(sizeof(char *) * (words + 1));
 	if (sp == NULL)
 		return (NULL);
-	sp[words] = 0;
+	sp[words] = NULL;
 	ft_writ(sp, (char *)s, c);
 	return (sp);
 }
+/*#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+	char	*string = "      split       this for   me  !       ";
+	char	**expected = ((char*[6]){"split", "this", "for", "me", "!", NULL});
+
+	char	**result = ft_split(string, ' ');
+
+	 while (*result)
+	{
+                if (strcmp(*result, *expected))
+                {
+                        printf("TEST_FAILED");
+                }
+                result++;
+                expected++;
+        }
+        printf("TEST_SUCCESS");
+}*/

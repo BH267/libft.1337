@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 20:10:28 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/04 10:07:00 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:51:39 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ size_t	ft_strlcat(char *dest, const char *src, size_t l)
 	i = 0;
 	slen = ft_strlen(src);
 	dlen = ft_strlen(dest);
-	if (dlen == l)
-		return (dlen + slen);
-	while (dlen + i < l && i < slen)
+	if (l <= dlen || l == 0)
+		return (l + slen);
+	while (dlen + i < l - 1 && src[i])
 	{
 		dest[dlen + i] = src[i];
 		i++;
 	}
 	dest[dlen + i] = '\0';
-	return (ft_strlen(dest) + ft_strlen(src));
+	return (dlen + slen);
 }

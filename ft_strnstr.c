@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:09:41 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/05 19:02:52 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/06 20:44:15 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 
 	if (!*to_find)
 		return (str);
-	if (len > ft_strlen(to_find))
-		len = ft_strlen(to_find);
+	if (len > ft_strlen(str))
+		len = ft_strlen(str);
 	i = 0;
-	while (str[i])
+	while (str[i] && i <= len)
 	{
 		j = 0;
-		while (str[i + j] == to_find[j])
+		while (str[i + j] == to_find[j] && i <= len)
 		{
-			if (j == len - 1)
+			if (j == ft_strlen(to_find) - 1)
 				return (str + i);
 			j++;
 		}
