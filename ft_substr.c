@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 18:50:37 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/05 12:09:02 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:05:40 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*subs;
 	size_t	i;
 
-	if (len >= ft_strlen(s))
+	if (len + start >= ft_strlen(s))
 		len = ft_strlen(s) - start;
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
