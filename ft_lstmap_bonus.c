@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:32:19 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/04 10:39:17 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:29:44 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*node;
+	void	*d;
 
 	if (!lst || !f)
 		return (NULL);
 	new = NULL;
 	while (lst)
 	{
-		node = ft_lstnew(f(lst->content));
+		d = f(lst->content);
+		node = ft_lstnew(d);
 		if (!node)
 		{
-			ft_lstclear(&node, del);
+			del(d);
+			ft_lstclear(&new, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&new, node);
