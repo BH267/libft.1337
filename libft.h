@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:45:58 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/06 18:00:55 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/07 09:45:01 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int		ft_atoi(char *nbr);
+int		ft_atoi(const char *nbr);
 int		ft_lstsize(t_list *lst);
 int		ft_strncmp(char *s, char *p, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);

@@ -6,13 +6,13 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:05:45 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/05 14:38:03 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/07 09:44:05 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *nbr)
+int	ft_atoi(const char *nbr)
 {
 	int	n;
 	int	s;
