@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:09:41 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/09 09:38:06 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/09 11:03:45 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!*to_find || !str)
+	if (!*to_find || !len)
 		return (str);
 	if (len > ft_strlen(str))
 		len = ft_strlen(str);
@@ -34,4 +34,8 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 		i++;
 	}
 	return (NULL);
+}
+int main()
+{
+	printf("hak :%s\n", strnstr(NULL, "has", 0));	
 }
