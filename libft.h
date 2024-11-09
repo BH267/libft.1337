@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:45:58 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/07 09:45:01 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:07:15 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stddef.h>
+# include <limits.h>
+# include <stdint.h>
 
 typedef struct s_list
 {

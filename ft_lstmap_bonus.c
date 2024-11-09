@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:32:19 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/07 11:29:44 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/09 09:44:52 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*node;
 	void	*d;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	new = NULL;
 	while (lst)
