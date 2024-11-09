@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:08:55 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/03 20:56:53 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/09 11:52:18 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t len, size_t b)
 {
 	void	*p;
 
-	if ( b && len > SIZE_MAX / b)
+	if (b && len > SIZE_MAX / b)
 		return (NULL);
 	p = malloc(len * b);
 	if (!p)

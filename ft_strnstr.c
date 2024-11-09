@@ -6,7 +6,7 @@
 /*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:09:41 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/09 11:03:45 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/09 12:00:35 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!*to_find || !len)
+	if (!*to_find)
 		return (str);
+	if (!len)
+		return (NULL);
 	if (len > ft_strlen(str))
 		len = ft_strlen(str);
 	i = 0;
@@ -34,8 +36,4 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 		i++;
 	}
 	return (NULL);
-}
-int main()
-{
-	printf("hak :%s\n", strnstr(NULL, "has", 0));	
 }
