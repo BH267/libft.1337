@@ -6,7 +6,7 @@
 /*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 17:23:55 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/06 22:55:20 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/09 16:03:04 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,25 +89,25 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-/*#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
 
-int main()
-{
-	char	*string = "      split       this for   me  !       ";
-	char	**expected = ((char*[6]){"split", "this", "for", "me", "!", NULL});
+// int main()
+// {
+// 	char	*string = "      split       this for   me  !       ";
+// 	char	**expected = ((char*[6]){"split", "this", "for", "me", "!", NULL});
 
-	char	**result = ft_split(string, ' ');
+// 	char	**result = ft_split(string, ' ');
 
-	 while (*result)
-	{
-                if (strcmp(*result, *expected))
-                {
-                        printf("TEST_FAILED");
-                }
-                result++;
-                expected++;
-        }
-        printf("TEST_SUCCESS");
-}*/
+// 	 while (*result)
+// 	{
+//                 if (strcmp(*result, *expected))
+//                 {
+//                         printf("TEST_FAILED");
+//                 }
+//                 result++;
+//                 expected++;
+//         }
+//         printf("TEST_SUCCESS");
+// }
