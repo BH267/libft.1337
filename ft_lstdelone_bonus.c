@@ -6,7 +6,7 @@
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 17:58:43 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/06 21:38:22 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/11 09:30:50 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst || del)
-		del(lst->content);
+	if (!lst || !del)
+		return (NULL);
+	del(lst->content);
 	free(lst);
 }
