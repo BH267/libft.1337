@@ -40,4 +40,4 @@ fclean : clean
 	@$(RM) $(NAME) $(bonus)
 re : fclean all
 
-.PHONY:all re clean fclean
+.PHONY:all re clean fclean bonus
